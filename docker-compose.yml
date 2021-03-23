@@ -2,5 +2,16 @@ version: "3.7"
 services:
   db:
     image: postgres
+    ports:
+    - 5432:5432
     volumes:
-    - :
+    - reactive-db:/var/lib/postgresql/data
+    environment:
+      TZ: Asia/Seoul
+      LC_ALL: C.UTF-8
+      POSTGRES_PASSWORD: test
+      POSTGRES_USER: test
+      POSTGRES_DB: test
+
+volumes:
+  reactive-db:
